@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+    <meta charset="UTF-8">
+    <link href="css/tocas/tocas.css" rel='stylesheet'>
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script src="js/jquery.min.js"></script>
+    <script src="js/tocas.js"></script>
+	<script src="js/scan.js"></script>
+    <title>ArOZ クラウドストレージ系統</title>
+</head>
+<body onLoad="onLoad()" style="margin: 0;">
+
+    <div class="ts borderless basic fluid menu" style="overflow: hidden;position: fixed;top:0;width: 100%;z-index: 999">
+        <div class="item"><a onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"></a></div>
+
+        <div class="header stretched center aligned item">ArOZ Portable 系統を発見</div>
+
+		<div class="item"><a onclick="window.scrollTo(0,document.body.scrollHeight);"></a></div>
+    </div>
+
+
+	<div id="offsets" style="top:40px">
+
+    <div id="discoverDeviceList" class="ts small attached segmented single line selection items">
+		
+    </div>
+	<div class="ts small attached segmented single line selection items">
+		<a href="" class="ts item" onClick="location.reload(); ">
+            <div class="content">
+                <div class="header"><i class="repeat icon"></i>再検出</div>
+                <div class="middoted meta">
+                    <div>デバイスが見つからない場合は、<br>ここをクリックしてください。</div>
+                </div>
+            </div>
+        </a>
+    </div>
+	<div id="loading" class="ts active inverted dimmer" style="position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);width:100%;">
+			<div class="ts text loader">検出中...</div>
+	</div>
+	</div>
+	
+	<div id="list" style="display:none;"></div>
+	<div id="debug" style="display:none;"></div>
+	
+    <div class="ts mini borderless bottom fixed evenly divided labeled icon menu">
+        <a href="#!" class="active item">
+            <i class="feed icon"></i>
+            自動スキャン
+        </a>
+        <a href="manual.html" class="item">
+            <i class="write icon"></i>
+            手動入力
+        </a>
+    </div>
+
+</body>
+</html>

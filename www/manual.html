@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+    <meta charset="UTF-8">
+    <link href="css/tocas/tocas.css" rel='stylesheet'>
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script src="js/jquery.min.js"></script>
+    <script src="js/tocas.js"></script>
+	<script src="js/manual.js"></script>
+    <title>ArOZ クラウドストレージ系統</title>
+</head>
+<body onLoad="onLoad()" style="margin: 0;">
+
+    <div class="ts borderless basic fluid menu" style="overflow: hidden;position: fixed;top:0;width: 100%;z-index: 999">
+        <div class="item"><a onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"></a></div>
+
+        <div class="header stretched center aligned item">ArOZ Portable 系統設定</div>
+
+		<div class="item"><a onclick="window.scrollTo(0,document.body.scrollHeight);"></a></div>
+    </div>
+
+	<div id="offsets" style="top:40px">
+	<div class="ts small attached segmented single line selection items">
+		<div href="" class="ts item">
+            <div class="content">
+                <div class="header"><i class="write icon"></i>手動入力</div>
+                <div class="middoted meta">
+                    <div class="ts underlined fluid input">
+						<input id="enteredIP" type="text" placeholder="IPアドレス (e.g. 192.168.0.100)" onkeypress="return inputHandler(event)">
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<dialog id="delRecordConfirm" class="ts fullscreen modal" style="display:none;top:40px;left:0;position:fixed;z-index:99;" open>
+		<div class="header">
+			記録削除 / Delete Records
+		</div>
+		<div class="content">
+			<p>警告！ ArOZ Portable から削除、復元することはできません。<br>Warning! All record deleted from ArOZ Portable cannot be undone.</p>
+		</div>
+		<div class="actions">
+			<div class="ts fluid separated stackable buttons">
+				<button class="ts deny button" onClick='$("#delRecordConfirm").hide();'>
+					取消
+				</button>
+				<button class="ts positive button" onClick="removeAllRecords();">
+					確認
+				</button>
+			</div>
+		</div>
+	</dialog>
+	<div id="storedServer" class="ts small attached segmented single line selection items">
+		
+	</div>
+	<div class="ts small attached segmented single line selection items" >
+		<div class="ts item" onClick='$("#delRecordConfirm").show();'>
+            <div class="content">
+                <div class="header"><i class="remove circle icon"></i>記録削除</div>
+                <div class="middoted meta">
+                    警告！ ArOZ Portable から削除、復元することはできません。
+                </div>
+            </div>
+        </div>
+    </div>
+	</div>
+	
+	
+	
+    <div class="ts mini borderless bottom fixed evenly divided labeled icon menu">
+        <a href="scan.html" class="item">
+            <i class="feed icon"></i>
+            自動スキャン
+        </a>
+        <a href="#!" class="active item">
+            <i class="write icon"></i>
+            手動入力
+        </a>
+    </div>
+
+</body>
+</html>
